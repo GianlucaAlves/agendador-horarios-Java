@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AgendamentoForm from "./components/AgendamentoForm";
 
+
 type Agendamento = {
   id?: number;
   servico: string;
@@ -13,15 +14,16 @@ type Agendamento = {
 function App() {
   const [agendamentos, setAgendamentos] = useState<Agendamento[]>([]);
   const [editAgendamento, setEditAgendamento] = useState<Agendamento | null>(null);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    fetch("http://localhost:8081/agendamentos")
+    fetch(`${API_URL}/agendamentos`)
       .then(res => res.json())
       .then(setAgendamentos);
   }, []);
 
   function addAgendamento(data: Omit<Agendamento, "id">) {
-    fetch("http://localhost:8081/agendamentos", {
+    fetch(`${API_URL}/agendamentos`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -32,7 +34,7 @@ function App() {
 
   function deleteAgendamento(a: Agendamento) {
   fetch(
-    `http://localhost:8081/agendamentos/${a.id}`,
+    `${API_URL}/agendamentos/${a.id}`,
     { method: "DELETE" }
   ).then(res => {
     if (res.ok) {
@@ -44,7 +46,7 @@ function App() {
 }
 
   function updateAgendamento(data: Agendamento) {
-  fetch("http://localhost:8081/agendamentos", {
+  fetch(`${API_URL}/agendamentos`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),

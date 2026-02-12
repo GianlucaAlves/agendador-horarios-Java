@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://agendador-horarios-java.onrender.com")
 @RestController
 @RequestMapping ("/agendamentos")
 @RequiredArgsConstructor
