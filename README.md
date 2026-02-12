@@ -204,7 +204,7 @@ Altere para o domínio do frontend em produção após o deploy.
 - O projeto está pronto para deploy em Vercel (frontend) e Render (backend).
 - Use variáveis de ambiente para configurar URLs em produção.
 - Certifique-se de que o backend está rodando antes de iniciar o frontend localmente.
-- O Git não versiona pastas vazias; se o `backend/` estiver vazio, ele não aparecerá no GitHub. Mantenha ao menos um arquivo (ex.: `.gitkeep`) ou adicione o código do backend para que a pasta seja enviada.
+- O Git não versiona pastas vazias; se o `backend/` estiver vazio, ele não aparecerá no GitHub. Mantenha pelo menos um arquivo (ex.: `.gitkeep`) ou adicione o código do backend para que a pasta seja enviada.
 
 ---
 
